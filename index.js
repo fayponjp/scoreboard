@@ -7,12 +7,12 @@ const guestScoreElement = document.getElementById("guestScore");
 homeScoreElement.textContent = 0;
 guestScoreElement.textContent = 0;
 
-function pointHome(points) {
-    currentHomeScore += points;
-    homeScoreElement.textContent = currentHomeScore;
-}
-
-function pointGuest(points) {
-    currentGuestScore += points;
-    guestScoreElement.textContent = currentGuestScore;
+function updatePoints(points, team) {
+    if (team === "home") {
+        currentHomeScore += points;
+        homeScoreElement.textContent = currentHomeScore;
+    } else {
+        currentGuestScore += points;
+        guestScoreElement.textContent = currentGuestScore;
+    }
 }
